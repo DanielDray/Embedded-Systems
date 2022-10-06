@@ -39,7 +39,8 @@ int main()
     {
         //Toggle the LED
         ledBlue = !ledBlue;
-
+        ledRed = !ledRed;
+        ledGreen = !ledGreen;
         //Display in the terminal
         printf("Count: %d\n", counter);
 
