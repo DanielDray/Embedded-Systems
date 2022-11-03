@@ -27,12 +27,23 @@ int main()
         
         //Read button without blocking
         int btnA = ButtonA;     //Local to the while-loop  
+        int btnB = ButtonB;
 
         //Test Button A
         if (btnA == 1) {
             redLED = !redLED;    //Toggle RED led
-            count = count + 1;            //Increment count
+            count = count + ((count<99) ? 1 : 0);            //Increment count
             disp = count;       //Update display
+        }
+
+        else if (btnB == 1) {
+            yellowLED = !yellowLED;    //Toggle YELLOW led
+            count = count - ((count>0) ? 1 : 0);            //Decrease count
+            disp = count;       //Update display
+        }
+
+        else {
+            greenLED =!greenLED;
         }
 
         // Slow it down a bit (and debounce the switches)
